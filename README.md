@@ -1,9 +1,11 @@
-Brunch with Phaser 3
+Brunch with Phaser 3 (ES6)
 ====================
 
 A [Brunch](http://brunch.io) skeleton for making games with [Phaser 3](http://phaser.io/phaser3) and [ES6/ES2016][2]. ([Why Brunch?](http://brunch.io/docs/why-brunch))
 
     brunch new <project> -s samme/brunch-phaser-es6
+
+This is the ES6 variant of [brunch-phaser](https://github.com/samme/brunch-phaser).
 
 Get started
 -----------
@@ -39,11 +41,7 @@ Add NPM packages
 
     npm install -S <package-name>
 
-and in your code:
-
-```javascript
-require('package-name');
-```
+and then [import][1] as appropriate in your code.
 
 Add other libraries
 -------------------
@@ -67,4 +65,5 @@ npm install -D plugin-name
 - [uglify-js-brunch](https://www.npmjs.com/package/uglify-js-brunch#usage)
   - [minify options](https://www.npmjs.com/package/uglify-js#minify-options)
 
+[1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import
 [2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_2015_support_in_Mozilla
