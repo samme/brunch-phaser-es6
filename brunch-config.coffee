@@ -23,3 +23,7 @@ module.exports =
       ignore: ['node_modules/**', 'vendor/**']
   server:
     noPushState: on
+  watcher: {
+    awaitWriteFinish: true,
+    usePolling: true
+  }
