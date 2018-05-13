@@ -3,9 +3,7 @@ import DefaultScene from 'scenes/default';
 import MenuScene from 'scenes/menu';
 
 window.game = new Phaser.Game({
-
   // See <https://github.com/photonstorm/phaser/blob/master/src/boot/Config.js>
-
   width: 800,
   height: 600,
   // zoom: 1,
@@ -15,7 +13,7 @@ window.game = new Phaser.Game({
   // canvas: null,
   // canvasStyle: null,
   // seed: null,
-  title: '☕️ Brunch with Phaser', // 'My Phaser 3 Game'
+  title: '☕️ Brunch with Phaser and ES6', // 'My Phaser 3 Game'
   url: 'https://github.com/samme/brunch-phaser-es6',
   version: '0.0.1',
   // input: {
@@ -36,6 +34,7 @@ window.game = new Phaser.Game({
   //   target: 60,
   //   forceSetTimeout: false,
   // },
+  // antialias: false,
   // pixelArt: false,
   // transparent: false,
   // clearBeforeRender: true,
@@ -43,7 +42,7 @@ window.game = new Phaser.Game({
   loader: {
     // baseURL: '',
     path: 'assets/',
-    maxParallelDownloads: 6,
+    // maxParallelDownloads: 32,
     // crossOrigin: 'anonymous',
     // timeout: 0
   },
