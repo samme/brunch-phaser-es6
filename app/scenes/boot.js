@@ -31,10 +31,9 @@ export default class BootScene extends Phaser.Scene {
     this.progressBar = this.add.graphics();
   }
 
-  onLoadComplete (loader) {
-    // console.debug('onLoadComplete', loader);
-    console.debug('complete', loader.totalComplete);
-    console.debug('failed', loader.totalFailed);
+  onLoadComplete (loader, totalComplete, totalFailed) {
+    console.debug('complete', totalComplete);
+    console.debug('failed', totalFailed);
     this.progressBar.destroy();
   }
 
