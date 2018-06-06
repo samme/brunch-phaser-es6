@@ -47,12 +47,8 @@ and then [import][1] as appropriate in your code.
 
 If these packages should be transpiled from ES6 as well, remove or modify `plugins.babel.ignore` in [brunch-config](./brunch-config.coffee).
 
-Add other libraries
--------------------
-
-Add the unminified script to [vendor](vendor).
-
-### Settings
+Settings
+--------
 
 - [brunch](http://brunch.io/docs/config)
 - [babel-brunch](https://www.npmjs.com/package/babel-brunch#configuration)

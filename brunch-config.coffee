@@ -6,7 +6,7 @@ module.exports =
     javascripts:
       joinTo:
         'app.js': 'app/**'
-        'vendor.js': ['node_modules/**', 'vendor/**']
+        'vendor.js': ['node_modules/**']
     stylesheets:
       joinTo: 'app.css'
   modules:
@@ -20,7 +20,7 @@ module.exports =
   plugins:
     # https://github.com/babel/babel-brunch#configuration
     babel:
-      ignore: ['node_modules/**', 'vendor/**']
+      ignore: ['node_modules/**']
   server:
     noPushState: on
   watcher: {
