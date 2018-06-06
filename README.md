@@ -1,7 +1,8 @@
 Brunch with Phaser 3 (ES6)
 ====================
 
-A [Brunch](http://brunch.io) skeleton for making games with [Phaser 3](http://phaser.io/phaser3) and [ES6/ES2016][2]. ([Why Brunch?](http://brunch.io/docs/why-brunch))
+A [Brunch](http://brunch.io) skeleton for making games with [Phaser 3](http://phaser.io) and [ES6/ES2016][2].
+([Why Brunch?](http://brunch.io/docs/why-brunch))
 
     brunch new <project> -s samme/brunch-phaser-es6
 
@@ -17,6 +18,7 @@ Get started
   - `brunch new <project> -s samme/brunch-phaser-es6`
   - `npm run start` or `brunch watch --server` watches the project with continuous rebuild.
   - `npm run build` or `brunch build --production` builds a minified project for production.
+  - [troubleshooting](http://brunch.io/docs/troubleshooting)
 - Make:
   - Write your code in [app](app).
   - Put game assets in [assets](app/static/assets).
@@ -26,7 +28,7 @@ Phaser
 
 Phaser is managed through [npm](https://docs.npmjs.com/cli/npm).
 
-    npm ls --production
+    npm view phaser version
 
 Update with:
 
@@ -43,24 +45,16 @@ Add NPM packages
 
 and then [import][1] as appropriate in your code.
 
+If these packages should be transpiled from ES6 as well, remove or modify `plugins.babel.ignore` in [brunch-config](./brunch-config.coffee).
+
 Add other libraries
 -------------------
 
 Add the unminified script to [vendor](vendor).
 
-Plugins
--------
-
-```shell
-# List
-npm list --dev --depth=0
-
-# Add (http://brunch.io/plugins)
-npm install -D plugin-name
-```
-
 ### Settings
 
+- [brunch](http://brunch.io/docs/config)
 - [babel-brunch](https://www.npmjs.com/package/babel-brunch#configuration)
 - [uglify-js-brunch](https://www.npmjs.com/package/uglify-js-brunch#usage)
   - [minify options](https://www.npmjs.com/package/uglify-js#minify-options)
