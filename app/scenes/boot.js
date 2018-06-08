@@ -1,11 +1,14 @@
 import CONST from 'data/const';
 
+const Rectangle = Phaser.Geom.Rectangle;
+
 export default class BootScene extends Phaser.Scene {
 
   constructor () {
     super('boot');
     this.progressBar = null;
-    this.progressBarRectangle = null;
+    this.progressBgRect = null;
+    this.progressRect = null;
   }
 
   preload () {
@@ -26,8 +29,9 @@ export default class BootScene extends Phaser.Scene {
 
   createProgressBar () {
     const main = this.cameras.main;
-    this.progressBarRectangle = new Phaser.Geom.Rectangle(0, 0, 0.5 * main.width, 50);
-    Phaser.Geom.Rectangle.CenterOn(this.progressBarRectangle, 0.5 * main.width, 0.5 * main.height);
+    this.progressBgRect = new Rectangle(0, 0, 0.5 * main.width, 50);
+    Rectangle.CenterOn(this.progressBgRect, 0.5 * main.width, 0.5 * main.height);
+    this.progressRect = Rectangle.Clone(this.progressBgRect);
     this.progressBar = this.add.graphics();
   }
 
@@ -39,14 +43,13 @@ export default class BootScene extends Phaser.Scene {
 
   onLoadProgress (progress) {
     console.debug('progress', progress);
-    const rect = this.progressBarRectangle;
-    const color = this.load.totalFailed ? CONST.hexColors.red : CONST.hexColors.white;
+    this.progressRect.width = progress * this.progressBgRect.width;
     this.progressBar
       .clear()
       .fillStyle(CONST.hexColors.darkGray)
-      .fillRect(rect.x, rect.y, rect.width, rect.height)
-      .fillStyle(color)
-      .fillRect(rect.x, rect.y, progress * rect.width, rect.height);
+      .fillRectShape(this.progressBgRect)
+      .fillStyle(this.load.totalFailed ? CONST.hexColors.red : CONST.hexColors.white)
+      .fillRectShape(this.progressRect);
   }
 
 }
