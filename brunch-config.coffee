@@ -23,7 +23,7 @@ module.exports =
       ignore: ['node_modules/**']
   server:
     noPushState: on
-  watcher: {
-    awaitWriteFinish: true,
-    usePolling: true
-  }
+  # Fix too many open files (EMFILE) or empty modules after saving <http://brunch.io/docs/troubleshooting>
+  # watcher:
+  #   awaitWriteFinish: true,
+  #   usePolling: true
